@@ -1,0 +1,18 @@
+html {
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+body {
+  min-block-size: 100%;
+  min-inline-size: 100%;
+
+  box-sizing: border-box;
+  margin: 0;
+
+  font-family: system-ui, sans-serif;
+}
+
+#root {
+  height: 100vh;
+}

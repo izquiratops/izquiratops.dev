@@ -1,0 +1,10 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : "npm run build"
+    }
+  },
+  "identifier" : "1538B45B-53F3-4864-968E-00B9A3B5E2C0",
+  "openLogOnRun" : "finish"
+}

@@ -1,18 +1,12 @@
 {
   "compilerOptions": {
-    "strict": false,
     "esModuleInterop": true,
-    "jsx": "react",
-    "outDir": "./dist/",
-    "sourceMap": true,
-    "noImplicitAny": true,
+    "jsx": "react-jsx",
+    "noImplicitAny": false,
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "ES6",
     "allowJs": true,
-    "lib": [
-      "ES2020",
-      "dom"
-    ]
+    "lib": ["ES2020", "dom"]
   }
 }

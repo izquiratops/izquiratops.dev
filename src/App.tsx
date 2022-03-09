@@ -1,39 +1,31 @@
-import React, { useRef, useState } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
+import React, { Suspense } from 'react'
+import { Canvas } from '@react-three/fiber'
+import { Environment } from '@react-three/drei'
+import { EffectComposer, DepthOfField } from '@react-three/postprocessing'
+import Apricot from './Apricot'
 
-function Box(props) {
-  // This reference gives us direct access to the THREE.Mesh object
-  const ref = useRef()
-
-  // Hold state for hovered and clicked events
-  const [hovered, hover] = useState(false)
-  const [clicked, click] = useState(false)
-
-  // Subscribe this component to the render-loop, rotate the mesh every frame
-  useFrame((state, delta) => (ref.current.rotation.x += 0.01))
-
-    // Return the view, these are regular Threejs elements expressed in JSX
+export default function App({ count = 200, depth = 150 }) {
   return (
-    <mesh
-      {...props}
-      ref={ref}
-      scale={clicked ? 1.5 : 1}
-      onClick={(event) => click(!clicked)}
-      onPointerOver={(event) => hover(true)}
-      onPointerOut={(event) => hover(false)}>
-      <boxGeometry args={[1.5, 1.5, 1.5]} />
-      <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
-    </mesh>
-  )
-}
+    <Canvas gl={{ alpha: false }} camera={{ near: 0.01, far: 110, fov: 30 }}>
+      {/* Background & Lightning */}
+      <color attach="background" args={['#59f0b3']} />
+      <spotLight position={[5, 5, 5]} intensity={1.5} penumbra={0.7} />
 
-export default function App() {
-  return (
-    <Canvas>
-      <ambientLight intensity={0.5} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-      <pointLight position={[-10, -10, -10]} />
-      <Box position={[0, 0, 0]} />
+      {/* Scene */}
+      <Suspense fallback={null}>
+        {/* HDRI */}
+        <Environment preset="sunset" />
+
+        {/* Spawn of objects */}
+        {Array.from({ length: count }, (_, idx) => (
+          <Apricot key={idx} z={-(idx / count) * depth - 15} />
+        ))}
+
+        {/* Postprocessing */}
+        <EffectComposer>
+          <DepthOfField target={[0, 0, depth / 2]} focalLength={0.6} bokehScale={2} height={700} />
+        </EffectComposer>
+      </Suspense>
     </Canvas>
   )
 }
