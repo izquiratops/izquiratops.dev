@@ -6,14 +6,14 @@ export default function Overlay() {
       <div className="content-wrapper">
         <section>
           <h1>
-            Hola! I'm <b className="name">Jordi Izquierdo</b>
+            Hola! I'm <b className="accent-shadow">Jordi Izquierdo</b>
           </h1>
           <div className="gui-card">
             <p>
               I'm a 27 years old developer and artist. I'm currently helping to create awesome web stuff on a research group at{' '}
               <a href="https://www.upc.edu/ca" target="_blank">
-                UPC.
-              </a>
+                UPC
+              </a>.
             </p>
             <ul>
               <li>
@@ -27,7 +27,7 @@ export default function Overlay() {
                 </a>
               </li>
               <li>
-                <a href="" target="_blank">
+                <a href="jordi-izquierdo-cv.pdf" target="_blank">
                   <img src="icons/cv.svg" />
                 </a>
               </li>
@@ -38,7 +38,7 @@ export default function Overlay() {
         <section>
           <h2>
             What can be found on my{' '}
-            <a href="https://github.com/izquiratops" target="_blank">
+            <a href="https://github.com/izquiratops" target="_blank" className="accent-shadow">
               GitHub <img src="icons/github.svg" style={{ height: '1rem' }} />
             </a>
           </h2>
@@ -60,7 +60,7 @@ export default function Overlay() {
                   React Three Fiber boilerplate
                 </a>
               </dt>
-              <dd>You can build something like those 🍑🍑🍑 from behind with this project!</dd>
+              <dd>You can build something like those 🍑🍑🍑 from the background with this project!</dd>
             </div>
 
             <div className="gui-card">

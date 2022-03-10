@@ -1,7 +1,8 @@
 :root {
   -webkit-font-smoothing: antialiased;
 
-  --accent: #f5b042;
+  --accent-color: #faa825;
+  --accent-thickness: 4px;
 
   --space-xxs: 0.25rem;
   --space-xs: 0.5rem;
@@ -27,10 +28,21 @@ body {
   margin: 0;
 
   font-family: -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 20px;
 }
 
 #root {
   height: 100vh;
+}
+
+@media (max-width: 800px) {
+  :root {
+    --accent-thickness: 2px;
+  }
+
+  body {
+    font-size: 16px;
+  }
 }
 
 h1 {
@@ -96,8 +108,8 @@ main {
   max-width: 90vw;
 }
 
-.name {
-  text-shadow: 0.1rem 0.1rem var(--accent);
+.accent-shadow {
+  text-shadow: var(--accent-thickness) var(--accent-thickness) var(--accent-color);
 }
 
 .gui-card {
@@ -106,5 +118,5 @@ main {
   background: white;
   padding: var(--space-sm);
   border-radius: 0.4rem;
-  box-shadow: 0.2rem 0.2rem var(--accent);
+  box-shadow: var(--accent-thickness) var(--accent-thickness) var(--accent-color);
 }
