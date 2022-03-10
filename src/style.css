@@ -1,6 +1,22 @@
+:root {
+  -webkit-font-smoothing: antialiased;
+
+  --accent: #f5b042;
+
+  --space-xxs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 6rem;
+}
+
 html {
   block-size: 100%;
   inline-size: 100%;
+
+  background: #ffcd69;
 }
 
 body {
@@ -10,9 +26,85 @@ body {
   box-sizing: border-box;
   margin: 0;
 
-  font-family: system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
 }
 
 #root {
   height: 100vh;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+small {
+  font-size: 0.6rem;
+}
+
+img {
+  height: 1.3rem;
+}
+
+ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  gap: var(--space-md);
+
+  list-style: none;
+  padding-block: 0;
+  margin-block: 0;
+  margin-inline-start: 0;
+  margin-inline-end: var(--space-sm);
+}
+
+dt {
+  font-weight: 800;
+}
+
+dl {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+main {
+  position: relative;
+  inline-size: 100%;
+  z-index: 10;
+
+  display: grid;
+  place-content: center;
+  padding-block: var(--space-md);
+}
+
+.content-wrapper {
+  display: grid;
+  align-items: flex-start;
+  gap: var(--space-md);
+  grid-template-columns: minmax(min(10ch, 100%), 50ch);
+
+  max-width: 90vw;
+}
+
+.name {
+  text-shadow: 0.1rem 0.1rem var(--accent);
+}
+
+.gui-card {
+  display: grid;
+  gap: var(--space-sm);
+  background: white;
+  padding: var(--space-sm);
+  border-radius: 0.4rem;
+  box-shadow: 0.2rem 0.2rem var(--accent);
 }

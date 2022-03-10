@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "esbuild src/main.tsx --bundle --minify --outfile=dist/bundle.js",
-    "watch": "esbuild src/main.tsx --bundle --minify --watch --outfile=dist/bundle.js",
+    "build": "esbuild src/main.tsx --bundle --outfile=dist/bundle.js",
+    "watch": "esbuild src/main.tsx --bundle --watch --outfile=dist/bundle.js",
     "serve": "esbuild --servedir=dist"
   },
   "dependencies": {

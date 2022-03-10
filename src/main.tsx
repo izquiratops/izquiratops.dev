@@ -1,11 +1,14 @@
 import ReactDOM from 'react-dom'
 import * as React from 'react'
-import App from './App'
 import './style.css'
+
+import Scene from './Scene'
+import Overlay from './Overlay'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Overlay />
+    <Scene />
   </React.StrictMode>,
   document.getElementById('root')
 )
