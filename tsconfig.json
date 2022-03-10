@@ -6,7 +6,6 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "ES6",
-    "allowJs": true,
     "lib": ["ES2020", "dom"]
   }
 }

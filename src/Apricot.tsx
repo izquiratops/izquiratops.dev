@@ -4,11 +4,15 @@ import { useFrame, useThree } from '@react-three/fiber'
 import { useGLTF } from '@react-three/drei'
 
 export default function Apricot({ z }) {
-  const group = useRef()
-  const { nodes, materials } = useGLTF('apricot.glb')
+  const group = useRef(null)
+
+  {
+    /* warn: .geometry is not included with THREE.Object3D<Event> and idk why */
+  }
+  const { nodes, materials }: any = useGLTF('apricot.glb')
 
   const { viewport, camera } = useThree()
-  const { width, height } = viewport.getCurrentViewport(camera, [0, 0, z])
+  const { width, height } = viewport.getCurrentViewport(camera, new THREE.Vector3(0, 0, z))
 
   const [data] = useState({
     x: THREE.MathUtils.randFloatSpread(2),
@@ -18,11 +22,12 @@ export default function Apricot({ z }) {
     rndZ: (Math.floor(Math.random()) || -1) * Math.random() * Math.PI
   })
 
-  useFrame((state) => {
+  useFrame(() => {
     group.current.rotation.x = data.rndX += 0.003
     group.current.rotation.y = data.rndY += 0.003
     group.current.rotation.z = data.rndZ += 0.003
     group.current.position.set(data.x * width, (data.y -= 0.02), z)
+
     if (data.y < -height) {
       data.y = height
     }

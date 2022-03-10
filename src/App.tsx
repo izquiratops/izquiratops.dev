@@ -4,7 +4,7 @@ import { Environment } from '@react-three/drei'
 import { EffectComposer, DepthOfField } from '@react-three/postprocessing'
 import Apricot from './Apricot'
 
-export default function App({ count = 200, depth = 150 }) {
+export default function App({ count = 200, depth = 100 }) {
   return (
     <Canvas gl={{ alpha: false }} camera={{ near: 0.01, far: 110, fov: 30 }}>
       {/* Background & Lightning */}
@@ -23,7 +23,7 @@ export default function App({ count = 200, depth = 150 }) {
 
         {/* Postprocessing */}
         <EffectComposer>
-          <DepthOfField target={[0, 0, depth / 2]} focalLength={0.6} bokehScale={2} height={700} />
+          <DepthOfField target={[0, 0, depth / 2]} focalLength={0.6} bokehScale={1.7} height={700} />
         </EffectComposer>
       </Suspense>
     </Canvas>
