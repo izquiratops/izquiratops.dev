@@ -1,5 +1,6 @@
 :root {
   -webkit-font-smoothing: antialiased;
+  --font-size: 20px;
 
   --accent-color: #faa825;
   --accent-thickness: 4px;
@@ -11,6 +12,18 @@
   --space-lg: 2rem;
   --space-xl: 3rem;
   --space-xxl: 6rem;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --accent-thickness: 2px;
+    --font-size: 16px;
+  }
+}
+
+#root {
+  display: grid;
+  min-height: 100vh;
 }
 
 html {
@@ -27,22 +40,16 @@ body {
   box-sizing: border-box;
   margin: 0;
 
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-  font-size: 20px;
+  font-family: -apple-system, "Inter", sans-serif;
+  font-size: var(--font-size);
 }
 
-#root {
-  height: 100vh;
-}
+main {
+  position: relative;
+  z-index: 10;
 
-@media (max-width: 800px) {
-  :root {
-    --accent-thickness: 2px;
-  }
-
-  body {
-    font-size: 16px;
-  }
+  display: grid;
+  place-content: center;
 }
 
 h1 {
@@ -89,21 +96,11 @@ dl {
   gap: var(--space-sm);
 }
 
-main {
-  position: relative;
-  inline-size: 100%;
-  z-index: 10;
-
-  display: grid;
-  place-content: center;
-  padding-block: var(--space-md);
-}
-
 .content-wrapper {
   display: grid;
   align-items: flex-start;
   gap: var(--space-md);
-  grid-template-columns: minmax(min(10ch, 100%), 50ch);
+  grid-template-columns: repeat(auto-fit, minmax(min(10ch, 100%), 50ch));
 
   max-width: 90vw;
 }

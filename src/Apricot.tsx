@@ -9,7 +9,7 @@ export default function Apricot({ z }) {
   {
     /* warn: .geometry is not included with THREE.Object3D<Event> and idk why */
   }
-  const { nodes, materials }: any = useGLTF('apricot.glb')
+  const { nodes, materials }: any = useGLTF('files/apricot.glb')
 
   const { viewport, camera } = useThree()
   const { width, height } = viewport.getCurrentViewport(camera, new THREE.Vector3(0, 0, z))
@@ -51,4 +51,4 @@ export default function Apricot({ z }) {
   )
 }
 
-useGLTF.preload('/apricot.glb')
+useGLTF.preload('files/apricot.glb')

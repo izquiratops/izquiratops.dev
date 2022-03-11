@@ -50,7 +50,8 @@ export default function Overlay() {
                 </a>
               </dt>
               <dd>
-                Annual programming puzzles that can be solved in any language. <small>I used JavaScript</small>
+                Annual programming puzzles that can be solved in any language.<br/>
+                <small>I used JavaScript</small>
               </dd>
             </div>
 
@@ -60,7 +61,7 @@ export default function Overlay() {
                   React Three Fiber boilerplate
                 </a>
               </dt>
-              <dd>You can build something like those 🍑🍑🍑 from the background with this project!</dd>
+              <dd>You can build something like those 🍑 from the background with this project!</dd>
             </div>
 
             <div className="gui-card">

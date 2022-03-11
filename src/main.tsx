@@ -1,5 +1,7 @@
 import ReactDOM from 'react-dom'
 import * as React from 'react'
+
+import '@fontsource/inter'
 import './style.css'
 
 import Scene from './Scene'
