@@ -3,6 +3,7 @@
   --font-size: 20px;
 
   --accent-color: #faa825;
+  --alt-color: #fccb8a;
   --accent-thickness: 4px;
 
   --space-xxs: 0.25rem;
@@ -14,10 +15,16 @@
   --space-xxl: 6rem;
 }
 
-@media (max-width: 600px) {
-  :root {
-    --accent-thickness: 2px;
-    --font-size: 16px;
+::selection {
+  background: var(--alt-color);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -25,6 +32,12 @@
   display: grid;
   min-height: 100vh;
 }
+
+canvas {
+  touch-action: none;
+  animation: fade-in 1s ease 0.3s forwards;
+}
+
 
 html {
   block-size: 100%;
@@ -50,6 +63,7 @@ main {
 
   display: grid;
   place-content: center;
+  margin-block: var(--space-xxl);
 }
 
 h1 {
@@ -57,13 +71,15 @@ h1 {
   font-weight: 500;
 }
 
-p {
+h1, h2, p {
   margin: 0;
 }
 
 a {
   color: black;
-  text-decoration: none;
+  text-decoration: underline 3px;
+  text-decoration-color: var(--accent-color);
+  font-weight: 800;
 }
 
 small {
@@ -76,13 +92,15 @@ img {
 
 ul {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-end;
-  gap: var(--space-md);
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  column-gap: var(--space-md);
+  row-gap: var(--space-xs);
 
   list-style: none;
   padding-block: 0;
-  margin-block: 0;
+  padding-inline: 0;
+  margin-block: var(--space-sm);
   margin-inline-start: 0;
   margin-inline-end: var(--space-sm);
 }
@@ -91,7 +109,7 @@ dt {
   font-weight: 800;
 }
 
-dl {
+section, dl {
   display: grid;
   gap: var(--space-sm);
 }
@@ -116,4 +134,15 @@ dl {
   padding: var(--space-sm);
   border-radius: 0.4rem;
   box-shadow: var(--accent-thickness) var(--accent-thickness) var(--accent-color);
+}
+
+@media (max-width: 600px) {
+  :root {
+    --accent-thickness: 2px;
+    --font-size: 16px;
+  }
+
+  main {
+    margin-block: var(--space-md);
+  }
 }

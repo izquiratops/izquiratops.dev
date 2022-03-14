@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "esbuild src/main.tsx --bundle --minify --loader:.woff=file --loader:.woff2=file --outfile=dist/bundle.js",
-    "watch": "esbuild src/main.tsx --bundle --watch --outfile=dist/bundle.js",
+    "watch": "esbuild src/main.tsx --bundle --watch --loader:.woff=file --loader:.woff2=file --outfile=dist/bundle.js",
     "serve": "esbuild --servedir=dist"
   },
   "dependencies": {
