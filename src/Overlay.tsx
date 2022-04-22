@@ -29,7 +29,7 @@ export default function Overlay() {
 
                     <div className="gui-card">
                         <p>
-                            In my free time I'm up to a lot:
+                            In my free time I'm up to a lot
                             <ul>
                                 <li>
                                     <a href="https://github.com/izquiratops" target="_blank">Github</a>
