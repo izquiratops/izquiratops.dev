@@ -1,9 +1,4 @@
 node_modules
-dist/*.js
-dist/*.css
-dist/*.woff
-dist/*.woff2
-dist/files
 
 .idea
 .nova
