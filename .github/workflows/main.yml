@@ -37,4 +37,4 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         source: "dist"
         target: "/var/www/izquiratops.dev/"
-        strip_components: 0
+        strip_components: 1
