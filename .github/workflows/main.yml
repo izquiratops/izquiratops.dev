@@ -35,6 +35,6 @@ jobs:
       env:
         REPO: self
         BRANCH: gh_pages
-        FOLDER: dist/hacker-reader
+        FOLDER: dist
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MESSAGE: "Build: ({sha}) {msg}"
