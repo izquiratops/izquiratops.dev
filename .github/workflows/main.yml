@@ -35,5 +35,5 @@ jobs:
         port: ${{ secrets.PORT }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-        source: "dist/dist"
-        target: "/var/www/izquiratops.dev"
+        source: "dist"
+        target: "/var/www/izquiratops.dev/"
