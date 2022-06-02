@@ -30,9 +30,9 @@ pipeline {
                 script {
                     def remote = [:]
                     remote.name = 'test'
-                    remote.host = "${HOST}"
-                    remote.user = "${USERNAME}"
-                    remote.password = "${PASSWORD}"
+                    remote.host = '$HOST'
+                    remote.user = '$USERNAME'
+                    remote.password = '$PASSWORD'
                     remote.allowAnyHosts = true
                     
                     stage('Remote SSH') {
