@@ -26,17 +26,17 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-
-                script {
+                
+                node {
                     def remote = [:]
-                    remote.name = 'test'
+                    remote.name = "${HOST}"
                     remote.host = "${HOST}"
                     remote.user = "${USERNAME}"
                     remote.password = "${PASSWORD}"
                     remote.allowAnyHosts = true
                     
                     stage('Remote SSH') {
-                      sshPut remote: remote, from: 'dist/', into: '/var/www/cute-hn.site'
+                        sshCommand remote: remote, command: "ls -lrt"
                     }
                 }
             }
