@@ -4,7 +4,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building...'   
+                echo 'Building...'
+                nodejs('node-18') {
+                    sh 'npm run install'
+                    sh 'npm run build'
+                }
             }
         }
         stage('Test') {
