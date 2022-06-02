@@ -27,7 +27,7 @@ pipeline {
             steps {
                 echo 'Deploying...'
                 
-                node {
+                script {
                     def remote = [:]
                     remote.name = "${HOST}"
                     remote.host = "${HOST}"
