@@ -2,9 +2,9 @@ pipeline {
     agent any
     
     environment {
-        HOST        = credentials('Host')
-        USERNAME    = credentials('Username')
-        PASSWORD    = credentials('Password')
+        HOST     = credentials('Host')
+        USERNAME = credentials('Username')
+        PASSWORD = credentials('Password')
     }
 
     stages {
