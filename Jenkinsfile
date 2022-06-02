@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building...'
                 nodejs('node-18') {
-                    sh 'npm run install'
+                    sh 'npm install'
                     sh 'npm run build'
                 }
             }
