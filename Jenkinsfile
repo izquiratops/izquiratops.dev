@@ -36,7 +36,8 @@ pipeline {
                     remote.allowAnyHosts = true
                     
                     stage('Remote SSH') {
-                        sshCommand remote: remote, command: "ls -lrt"
+                        writeFile file: 'abc.sh', text: 'ls -lrt'
+                        sshPut remote: remote, from: 'abc.sh', into: '.'
                     }
                 }
             }
