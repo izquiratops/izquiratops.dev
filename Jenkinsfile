@@ -26,20 +26,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                
-                script {
-                    def remote = [:]
-                    remote.name = "${HOST}"
-                    remote.host = "${HOST}"
-                    remote.user = "${USERNAME}"
-                    remote.password = "${PASSWORD}"
-                    remote.allowAnyHosts = true
-                    
-                    stage('Remote SSH') {
-                        writeFile file: 'abc.sh', text: 'ls -lrt'
-                        sshPut remote: remote, from: 'abc.sh', into: '.'
-                    }
-                }
+                sh 'pwd'
+                sh 'ls -la /home'
             }
         }
     }
