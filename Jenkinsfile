@@ -1,11 +1,5 @@
 pipeline {
     agent any
-    
-    environment {
-        HOST     = credentials('Host')
-        USERNAME = credentials('Username')
-        PASSWORD = credentials('Password')
-    }
 
     stages {
         stage('Build') {
@@ -20,14 +14,14 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing...'   
+                echo 'Testing...'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                sh 'touch foo'
-                sh 'scp -P 9022 foo pi@izquiratops.dev:'
+                sh 'ssh -p 9022 pi@izquiratops.dev "rm -rf /var/www/izquiratops.dev"'
+                sh 'scp -P 9022 dist pi@izquiratops.dev:/var/www/izquiratops.dev'
             }
         }
     }
