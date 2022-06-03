@@ -26,8 +26,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                sh 'pwd'
-                sh 'ls -la /home'
+                sh 'touch foo'
+                sh 'scp -P 9022 foo pi@izquiratops.dev:'
             }
         }
     }
