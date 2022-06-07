@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo 'Deploying...'
                 sh 'ssh -p 9022 pi@izquiratops.dev "rm -rf /var/www/izquiratops.dev"'
-                sh 'scp -P 9022 dist pi@izquiratops.dev:/var/www/izquiratops.dev'
+                sh 'scp -r -P 9022 dist pi@izquiratops.dev:/var/www/izquiratops.dev'
             }
         }
     }
