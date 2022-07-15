@@ -12,8 +12,7 @@ export default function Overlay() {
                     <div className="gui-card">
                         <p>
                             I'm a 27 years old developer and artist from Barcelona, Spain.
-                            I'm currently helping to create awesome web apps on a research group at{' '}
-                            <a href="https://www.upc.edu/ca" target="_blank">UPC.</a>
+                            I'm currently helping to create awesome web apps <del>at UPC</del> at <a href={"https://es.linkedin.com/company/unblur"}>Unblur!</a>
                         </p>
                         <p>
                             You can get in touch with me via {' '}
@@ -53,7 +52,6 @@ export default function Overlay() {
                         </span>
                     </h2>
 
-                    {/*<dl>*/}
                     <div className="gui-card">
                         <dt>
                             <a href="https://github.com/izquiratops/Advent-of-Code-2021" target="_blank">
@@ -86,7 +84,6 @@ export default function Overlay() {
                             PostCSS.
                         </dd>
                     </div>
-                    {/*</dl>*/}
 
                 </section>
             </div>
